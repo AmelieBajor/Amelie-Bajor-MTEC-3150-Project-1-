@@ -31,7 +31,7 @@ public class FireballScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
+
 
     }
 }

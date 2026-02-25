@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 8f404d461855d14448749be9669281f7
+  productGUID: 1adcbe6911901114f997c6288e570bf5
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Single Screen Platformer-Amelie Bajor
+  productName: Project2(SingleScreenPlatformer)AmelieBajor
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -639,14 +639,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Single Screen Platformer-Amelie Bajor
+  metroPackageName: Project2(SingleScreenPlatformer)AmelieBajor
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Single Screen Platformer-Amelie Bajor
+  metroApplicationDescription: Project2(SingleScreenPlatformer)AmelieBajor
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -717,10 +717,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7b65db93-7d96-4ba1-b862-0e8e9003d4bf
+  cloudProjectId: c833b376-f009-46e7-b1aa-a421aa216763
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Single Screen Platformer-Amelie Bajor
+  projectName: Project2(SingleScreenPlatformer)AmelieBajor
   organizationId: ameliebajor9
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

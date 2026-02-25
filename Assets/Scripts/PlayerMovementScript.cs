@@ -4,6 +4,10 @@ public class PlayerMovementScript : MonoBehaviour
 {
     public float movementSpeed;
     public float jumpSpeed;
+    public float sprintingSpeed;
+    public float walkingSpeed;
+    public float health;
+    public float maxHealth;
 
     public LayerMask ground;
 
@@ -21,7 +25,7 @@ public class PlayerMovementScript : MonoBehaviour
     private float xVelocity;
     private Rigidbody2D rb;
 
-    private float attackOffset = 0.5f;
+    private float attackOffset = 0.3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,9 +41,18 @@ public class PlayerMovementScript : MonoBehaviour
     {
         xMove = Input.GetAxisRaw("Horizontal");
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = sprintingSpeed;
+        }
+        else
+        {
+            movementSpeed = walkingSpeed;
+        }
+
+
         xVelocity = xMove * movementSpeed * Time.deltaTime;
 
-        //transform.Translate(xMove * movementSpeed * Time.deltaTime,0,0);
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
 
@@ -131,5 +144,4 @@ public class PlayerMovementScript : MonoBehaviour
         return Physics2D.CircleCast(transform.position, radius, Vector2.down, dist, ground);
 
     }
-
 }

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-
     public float moveSpeed;
     public int hp;
     public float direction;
