@@ -106,6 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056bae6a26db4a641a62709fb4626af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireballScript
+  ground:
+    serializedVersion: 2
+    m_Bits: 8
   speed: 150
   direction: {x: 0, y: 0}
 --- !u!50 &1864731256852618572

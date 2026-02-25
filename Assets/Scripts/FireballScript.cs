@@ -3,6 +3,8 @@ using UnityEngine;
 public class FireballScript : MonoBehaviour
 {
 
+    public LayerMask ground;
+
     public float speed = 50;
     public Vector2 direction;
     private Rigidbody2D rb;
@@ -32,6 +34,21 @@ public class FireballScript : MonoBehaviour
         }
 
 
+
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+
+        if (collision.IsTouchingLayers(ground))
+        {
+            Destroy(gameObject);
+        }
 
     }
 }
