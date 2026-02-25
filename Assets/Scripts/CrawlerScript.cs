@@ -16,6 +16,13 @@ public class CrawlerScript : EnemyScript
 
         }
 
+            if (collision.gameObject.CompareTag("PlayerAttack"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+
+        }
+
     }
 
 }
