@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public float moveSpeed;
+    public GameObject[] spawnLocations;
     public int hp;
     public float direction;
     protected Rigidbody2D rb;
