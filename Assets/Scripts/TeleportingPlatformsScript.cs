@@ -8,6 +8,8 @@ public class TeleportingPlatformsScript : MonoBehaviour
     public GameObject groupOne;
     public GameObject groupTwo;
 
+    public GameObject warning;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,17 +21,50 @@ public class TeleportingPlatformsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (disappearingTimer < groupOneTime / 1.2)
+        {
+            warning.SetActive(false);
+        }
+
+
+        if (disappearingTimer >= groupOneTime / 1.2)
+        {
+
+            warning.SetActive(true);
+
+        }
+
+        if (disappearingTimer >= groupOneTime)
+        {
+            warning.SetActive(false);
+        }
+
+        if (disappearingTimer >= groupTwoTime / 1.2)
+        {
+
+            warning.SetActive(true);
+
+        }
+
+        if (disappearingTimer >= groupTwoTime)
+        {
+            warning.SetActive(false);
+        }
+
+
         if (disappearingTimer <= groupOneTime)
         {
             disappearingTimer += Time.deltaTime;
             groupOne.SetActive(true);
             groupTwo.SetActive(false);
 
-
+            
         }
 
         else if (disappearingTimer > groupOneTime)
         {
+
             if (disappearingTimer <= groupTwoTime)
             {
                 disappearingTimer += Time.deltaTime;
@@ -43,6 +78,8 @@ public class TeleportingPlatformsScript : MonoBehaviour
                 disappearingTimer = 0;
             }
         }
+
+
 
 
     }

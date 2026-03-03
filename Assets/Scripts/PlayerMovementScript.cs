@@ -8,22 +8,28 @@ public class PlayerMovementScript : MonoBehaviour
     public float walkingSpeed;
     public float health;
     public float maxHealth;
+    public float IFramesTimer = 0;
+    public float maxIFrames;
+    public bool IFramesTrue = false;
 
     public LayerMask ground;
 
     public GameObject meleeAttack;
     public GameObject bulletPrefab;
+    public GameObject invincibleShield;
     private float facingDirection;
 
     public float meleeDuration = 0.25f;
     private float timeElapsedSinceMelee = 0;
 
-    private bool meleeTriggered;
+    public bool meleeTriggered;
 
     private float xMove;
     private bool jumpFlag = false;
     private float xVelocity;
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private Animator anim;
 
     private float attackOffset = 0.3f;
 
@@ -31,6 +37,8 @@ public class PlayerMovementScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
+        anim = GetComponentInChildren<Animator>();
         facingDirection = 1;
 
 
@@ -55,7 +63,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-
+            anim.SetTrigger("Jump");
             jumpFlag = true;
 
         }
@@ -74,6 +82,7 @@ public class PlayerMovementScript : MonoBehaviour
             if (timeElapsedSinceMelee < meleeDuration)
             {
                 timeElapsedSinceMelee += Time.deltaTime;
+                
 
             }
             else
@@ -86,13 +95,53 @@ public class PlayerMovementScript : MonoBehaviour
 
         }
 
+
+
+
         //Debug.Log(IsGrounded());
         if (xMove != 0)
         {
 
             facingDirection = xMove;
+            anim.SetBool("isWalking", true);
 
         }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
+
+        if (IFramesTrue == true)
+        {
+            if (IFramesTimer <= maxIFrames)
+            {
+                IFramesTimer += Time.deltaTime;
+                invincibleShield.SetActive(true);
+            }
+            else
+            {
+                IFramesTrue = false;
+                IFramesTimer = 0;
+                invincibleShield.SetActive(false);
+            }
+        }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        if (facingDirection > 0)
+        {
+            sr.flipX = false;
+        }
+
+
+        if (facingDirection < 0)
+        {
+            sr.flipX =true;
+        }
+
     }
 
 
@@ -100,6 +149,8 @@ public class PlayerMovementScript : MonoBehaviour
     {
         xVelocity = xMove * movementSpeed * Time.deltaTime;
         rb.linearVelocity = new Vector3(xVelocity, rb.linearVelocity.y, 0);
+
+        anim.SetFloat("yVelo", rb.linearVelocityY);
 
         if (jumpFlag)
         {
@@ -111,9 +162,10 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void MeleeAttack()
     {
+        anim.SetTrigger("Attack");
         meleeTriggered = true;
         meleeAttack.SetActive(true);
-        meleeAttack.transform.localPosition = new Vector3(attackOffset * facingDirection, meleeAttack.transform.localPosition.y, 0);
+        meleeAttack.transform.localPosition = new Vector3(0, meleeAttack.transform.localPosition.y, 0);
 
     }
 
@@ -134,12 +186,28 @@ public class PlayerMovementScript : MonoBehaviour
 
         }
 
+        if (collision.CompareTag("Enemy"))
+        {
+
+            health -= 1;
+            Destroy(collision.gameObject);
+        }
+
+
+
     }
+
+    public void onLanding()
+    {
+        anim.SetTrigger("Landed");
+    }
+
 
     private bool IsGrounded()
     {
         float radius = GetComponent<Collider2D>().bounds.extents.x;
         float dist = GetComponent<Collider2D>().bounds.extents.y;
+        onLanding();
 
         return Physics2D.CircleCast(transform.position, radius, Vector2.down, dist, ground);
 

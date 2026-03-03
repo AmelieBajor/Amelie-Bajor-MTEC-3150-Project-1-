@@ -9,6 +9,9 @@ public class PowerUpScript : MonoBehaviour
     public float effectDuration;
     public float timeElapsedSinceEffect;
 
+    public float despawnTimer = 0;
+    public float maxDespawnTime = 5;
+
 
     private void Start()
     {
@@ -26,6 +29,7 @@ public class PowerUpScript : MonoBehaviour
         effectsApplied = true;
 
     }
+
 
 
     private void Update()
@@ -52,4 +56,21 @@ public class PowerUpScript : MonoBehaviour
 
 
     }
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Void"))
+        {
+            Destroy(gameObject);
+
+        }
+
+
+
+    }
+
+
+
+
 }

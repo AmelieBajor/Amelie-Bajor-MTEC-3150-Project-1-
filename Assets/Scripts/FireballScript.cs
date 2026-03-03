@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class FireballScript : MonoBehaviour
 {
-
-    public LayerMask ground;
-
-    public float speed = 50;
-    public Vector2 direction;
+    public float speed = 500;
+    [HideInInspector] public Vector2 direction;
     private Rigidbody2D rb;
-    private float despawnTimer;
-    private float despawnLimit = 5;
+
+    public float despawnTimer;
+    public float maxDespawnTime = 1;
+
+    public int damageAmount = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        despawnTimer = 0;
     }
 
     // Update is called once per frame
@@ -22,33 +23,21 @@ public class FireballScript : MonoBehaviour
     {
         rb.linearVelocity = direction * speed * Time.deltaTime;
 
-        if (despawnTimer < despawnLimit)
+        if (despawnTimer <= maxDespawnTime)
         {
             despawnTimer += Time.deltaTime;
-
         }
         else
         {
-            despawnTimer = 0;
             Destroy(gameObject);
+
         }
-
-
 
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-
-        if (collision.IsTouchingLayers(ground))
-        {
-            Destroy(gameObject);
-        }
-
+        Destroy(gameObject);
     }
+
 }

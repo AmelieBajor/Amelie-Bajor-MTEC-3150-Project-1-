@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - PlayerAttack
+  - Wall
+  - PlayerBullet
+  - PlayerMelee
+  - Void
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
