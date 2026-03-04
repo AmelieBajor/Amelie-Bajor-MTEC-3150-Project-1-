@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyFallAnimation
+  m_Name: platformOneAnimation
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -933197095978728485, guid: 3819ee05190e1d541a81e5aeea19f314, type: 3}
+      value: {fileID: 42710560695370386, guid: e3c5fa4114ae3e94fa3066a1a3831c23, type: 3}
     - time: 0.083333336
-      value: {fileID: -485431222982694409, guid: 52c41b76a89611c47baf7ad2d55e6b25, type: 3}
+      value: {fileID: 7412852370196974809, guid: a565f5ded6071f440864e91fa16d8003, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -933197095978728485, guid: 3819ee05190e1d541a81e5aeea19f314, type: 3}
-    - {fileID: -485431222982694409, guid: 52c41b76a89611c47baf7ad2d55e6b25, type: 3}
+    - {fileID: 42710560695370386, guid: e3c5fa4114ae3e94fa3066a1a3831c23, type: 3}
+    - {fileID: 7412852370196974809, guid: a565f5ded6071f440864e91fa16d8003, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

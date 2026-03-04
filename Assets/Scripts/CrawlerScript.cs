@@ -29,6 +29,19 @@ public class CrawlerScript : EnemyScript
         {
             Destroy(gameObject);
         }
+
+
+        if (direction > 0)
+        {
+            sr.flipX = false;
+        }
+
+
+        if (direction < 0)
+        {
+            sr.flipX = true;
+        }
+
     }
 
     private bool chargeDetection()

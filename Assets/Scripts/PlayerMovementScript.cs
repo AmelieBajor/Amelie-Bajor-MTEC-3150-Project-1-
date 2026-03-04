@@ -33,12 +33,26 @@ public class PlayerMovementScript : MonoBehaviour
 
     private float attackOffset = 0.3f;
 
+    private AudioSource audioSource;
+    public AudioClip jumpClip;
+    public AudioClip powerupClip;
+    public AudioClip attackClip;
+    public AudioClip fireballClip;
+
+    public GameObject health1;
+    public GameObject health2;
+    public GameObject health3;
+    public GameObject health4;
+    public GameObject health5;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
         facingDirection = 1;
 
 
@@ -64,6 +78,7 @@ public class PlayerMovementScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             anim.SetTrigger("Jump");
+            audioSource.PlayOneShot(jumpClip);
             jumpFlag = true;
 
         }
@@ -95,7 +110,59 @@ public class PlayerMovementScript : MonoBehaviour
 
         }
 
+        if (health == 5)
+        {
+            health1.SetActive(true);
+            health2.SetActive(true);
+            health3.SetActive(true);
+            health4.SetActive(true);
+            health5.SetActive(true);
+        }
 
+        if (health == 4)
+        {
+            health1.SetActive(false);
+            health2.SetActive(true);
+            health3.SetActive(true);
+            health4.SetActive(true);
+            health5.SetActive(true);
+        }
+
+        if (health == 3)
+        {
+            health1.SetActive(false);
+            health2.SetActive(false);
+            health3.SetActive(true);
+            health4.SetActive(true);
+            health5.SetActive(true);
+        }
+
+        if (health == 2)
+        {
+            health1.SetActive(false);
+            health2.SetActive(false);
+            health3.SetActive(false);
+            health4.SetActive(true);
+            health5.SetActive(true);
+        }
+
+        if (health == 1)
+        {
+            health1.SetActive(false);
+            health2.SetActive(false);
+            health3.SetActive(false);
+            health4.SetActive(false);
+            health5.SetActive(true);
+        }
+
+        if (health == 0)
+        {
+            health1.SetActive(false);
+            health2.SetActive(false);
+            health3.SetActive(false);
+            health4.SetActive(false);
+            health5.SetActive(false);
+        }
 
 
         //Debug.Log(IsGrounded());
@@ -166,6 +233,7 @@ public class PlayerMovementScript : MonoBehaviour
         meleeTriggered = true;
         meleeAttack.SetActive(true);
         meleeAttack.transform.localPosition = new Vector3(0, meleeAttack.transform.localPosition.y, 0);
+        audioSource.PlayOneShot(attackClip);
 
     }
 
@@ -174,6 +242,7 @@ public class PlayerMovementScript : MonoBehaviour
         Vector3 pos = new Vector3(transform.position.x + (attackOffset * facingDirection), transform.position.y, 0);
         GameObject bullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
         bullet.GetComponent<FireballScript>().direction = new Vector2(facingDirection, 0);
+        audioSource.PlayOneShot(fireballClip);
 
 
     }
@@ -182,6 +251,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (collision.GetComponent<PowerUpScript>() != null)
         {
+            audioSource.PlayOneShot(powerupClip);
             collision.GetComponent<PowerUpScript>().ApplyEffect();
 
         }

@@ -27,7 +27,8 @@ public class EnemyScript : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(direction * moveSpeed * Time.deltaTime, rb.linearVelocity.y);
-        anim.SetBool("inAir", false);
+
+
 
     }
 
@@ -60,10 +61,6 @@ public class EnemyScript : MonoBehaviour
             direction *= -1;
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            anim.SetBool("inAir", false);
-        }
 
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {

@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -137,10 +137,10 @@ TextureImporter:
       name: EnemyWalk2_1
       rect:
         serializedVersion: 2
-        x: 212
-        y: 198
-        width: 72
-        height: 72
+        x: 149
+        y: 92
+        width: 179
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,9 +160,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 149
-        y: 121
-        width: 44
-        height: 44
+        y: 92
+        width: 179
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: EnemyWalk2_3
       rect:
         serializedVersion: 2
-        x: 191
-        y: 93
-        width: 86
-        height: 93
+        x: 149
+        y: 92
+        width: 179
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,10 +203,10 @@ TextureImporter:
       name: EnemyWalk2_4
       rect:
         serializedVersion: 2
-        x: 282
-        y: 93
-        width: 44
-        height: 86
+        x: 149
+        y: 92
+        width: 179
+        height: 178
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

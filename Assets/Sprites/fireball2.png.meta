@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 3819ee05190e1d541a81e5aeea19f314
+guid: 13158989ca180d34abc154269760c199
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -933197095978728485
-    second: EnemyFall1_0
+      213: 2230344122243341868
+    second: fireball2_0
   - first:
-      213: 4221981305796915947
-    second: EnemyFall1_1
+      213: -7479001550258268712
+    second: fireball2_1
   - first:
-      213: -411153994108479338
-    second: EnemyFall1_2
-  - first:
-      213: -4222039802516762349
-    second: EnemyFall1_3
-  - first:
-      213: -2674124533519929083
-    second: EnemyFall1_4
+      213: -3134659224570231867
+    second: fireball2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -112,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyFall1_0
+      name: fireball2_0
       rect:
         serializedVersion: 2
-        x: 142
-        y: 121
-        width: 213
-        height: 144
+        x: 40
+        y: 231
+        width: 424
+        height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd303cc7f2e9c03f0800000000000000
-      internalID: -933197095978728485
+      spriteID: c2ed13d8926c3fe10800000000000000
+      internalID: 2230344122243341868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyFall1_1
+      name: fireball2_1
       rect:
         serializedVersion: 2
-        x: 247
-        y: 212
-        width: 65
-        height: 37
+        x: 40
+        y: 231
+        width: 424
+        height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be27d5ce0ad779a30800000000000000
-      internalID: 4221981305796915947
+      spriteID: 8d5924a27bf353890800000000000000
+      internalID: -7479001550258268712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyFall1_2
+      name: fireball2_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 128
-        width: 23
-        height: 37
+        x: 40
+        y: 231
+        width: 424
+        height: 69
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,52 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6985e29ee994b4af0800000000000000
-      internalID: -411153994108479338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFall1_3
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 135
-        width: 44
-        height: 58
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3119d6f3b2d4865c0800000000000000
-      internalID: -4222039802516762349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyFall1_4
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 128
-        width: 30
-        height: 37
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5013366a7e993ead0800000000000000
-      internalID: -2674124533519929083
+      spriteID: 5c3079b1b047f74d0800000000000000
+      internalID: -3134659224570231867
       vertices: []
       indices: 
       edges: []
@@ -225,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 147d4d79c5a150b4ebbdb92a4c7d959a
+    spriteID: c3a5f8fed885c014e945bba919946b0b
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      EnemyFall1_0: -933197095978728485
-      EnemyFall1_1: 4221981305796915947
-      EnemyFall1_2: -411153994108479338
-      EnemyFall1_3: -4222039802516762349
-      EnemyFall1_4: -2674124533519929083
+      fireball2_0: 2230344122243341868
+      fireball2_1: -7479001550258268712
+      fireball2_2: -3134659224570231867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
