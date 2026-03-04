@@ -9554,16 +9554,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 492929829}
     - target: {fileID: 3613921147155318262, guid: 7e546cbcc4aaee140925799f4a42359e, type: 3}
+      propertyPath: effectDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613921147155318262, guid: 7e546cbcc4aaee140925799f4a42359e, type: 3}
+      propertyPath: maxDespawnTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613921147155318262, guid: 7e546cbcc4aaee140925799f4a42359e, type: 3}
       propertyPath: powerUpColor.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4283643564203779074, guid: 7e546cbcc4aaee140925799f4a42359e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.24
+      value: -14.7
       objectReference: {fileID: 0}
     - target: {fileID: 4283643564203779074, guid: 7e546cbcc4aaee140925799f4a42359e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8299999
+      value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 4283643564203779074, guid: 7e546cbcc4aaee140925799f4a42359e, type: 3}
       propertyPath: m_LocalPosition.z
