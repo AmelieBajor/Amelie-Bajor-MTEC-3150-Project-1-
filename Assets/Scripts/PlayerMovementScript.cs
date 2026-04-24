@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class PlayerMovementScript : MonoBehaviour
 {
     public float movementSpeed;
@@ -45,6 +46,17 @@ public class PlayerMovementScript : MonoBehaviour
     public GameObject health4;
     public GameObject health5;
 
+    public int score = 0;
+    public int highScore = 0;
+    public Text scoreText;
+    public Text highScoreText;
+    public GameObject restartText;
+
+    public bool restart;
+    public Vector3 startPoint;
+    public Vector3 restartPoint;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,6 +66,7 @@ public class PlayerMovementScript : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
         facingDirection = 1;
+        health = 0;
 
 
     }
@@ -61,6 +74,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         xMove = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -195,7 +209,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            RestartGame();
         }
 
         if (facingDirection > 0)
@@ -207,6 +221,14 @@ public class PlayerMovementScript : MonoBehaviour
         if (facingDirection < 0)
         {
             sr.flipX =true;
+        }
+
+        scoreText.text = "SCORE: " + score;
+        highScoreText.text = "HIGHSCORE: " + highScore;
+
+        if (score >= highScore)
+        {
+            highScore = score;
         }
 
     }
@@ -263,6 +285,10 @@ public class PlayerMovementScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.CompareTag("DespawnPlayer"))
+        {
+            health = 0;
+        }
 
 
     }
@@ -280,6 +306,28 @@ public class PlayerMovementScript : MonoBehaviour
         onLanding();
 
         return Physics2D.CircleCast(transform.position, radius, Vector2.down, dist, ground);
+
+    }
+
+    private void RestartGame()
+    {
+        score = 0;
+        //rb.gravityScale = 0;
+        restartText.SetActive(true);
+        restart = true;
+        
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //rb.gravityScale = 1;
+            transform.position = startPoint;
+            restartText.SetActive(false);
+            restart = false;
+            health = maxHealth;
+
+        }
+
 
     }
 }

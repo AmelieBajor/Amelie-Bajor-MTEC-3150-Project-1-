@@ -6,11 +6,12 @@ public class EnemyScript : MonoBehaviour
     public int hp;
     public float direction;
     protected Rigidbody2D rb;
-    public int bulletDamage = 1;
+    public int bulletDamage = 3;
     public int meleeDamage = 3;
     public PlayerMovementScript player;
     public SpriteRenderer sr;
     public Animator anim;
+    public bool spawn;
 
 
 
@@ -28,6 +29,15 @@ public class EnemyScript : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(direction * moveSpeed * Time.deltaTime, rb.linearVelocity.y);
 
+        if (player.restart == true)
+        {
+            spawn = false;
+        }
+        else
+        {
+            spawn = true;
+        }
+
 
 
     }
@@ -41,7 +51,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if(player.meleeTriggered == false)
+            if (player.meleeTriggered == false)
             {
                 if (player.IFramesTrue == false)
                 {
@@ -50,7 +60,10 @@ public class EnemyScript : MonoBehaviour
                 }
 
             }
-
+            else
+            {
+                player.score += 2;
+            }
             Destroy(gameObject);
 
 
@@ -65,6 +78,7 @@ public class EnemyScript : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
             hp -= bulletDamage;
+            player.score += 1;
             Destroy(collision.gameObject);
 
         }

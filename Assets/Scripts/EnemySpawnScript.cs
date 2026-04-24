@@ -10,6 +10,7 @@ public class EnemySpawnScript : MonoBehaviour
     private int direction = 1;
     private float directionDuration;
     public float maxDirectionDuration;
+    public EnemyScript enemySpawn;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,29 +21,34 @@ public class EnemySpawnScript : MonoBehaviour
 
     private void Update()
     {
-        if (spawnTimer < spawnRate)
+        if(enemySpawn.spawn == true)
         {
-            spawnTimer += Time.deltaTime;
-        }
-        else
-        {
-            SpawnEnemy();
-            spawnTimer = 0;
-        }
+            if (spawnTimer < spawnRate)
+            {
+                spawnTimer += Time.deltaTime;
+            }
+            else
+            {
+                SpawnEnemy();
+                spawnTimer = 0;
+            }
 
 
-        if (directionDuration < maxDirectionDuration)
-        {
-            directionDuration += Time.deltaTime;
-           
-        }
-        else
-        {
-            direction *= -1;
-            directionDuration = 0;
+            if (directionDuration < maxDirectionDuration)
+            {
+                directionDuration += Time.deltaTime;
+
+            }
+            else
+            {
+                direction *= -1;
+                directionDuration = 0;
+            }
+
+            transform.Translate(spawnerSpeed * direction * Time.deltaTime, 0, 0);
+
         }
 
-        transform.Translate(spawnerSpeed * direction * Time.deltaTime, 0, 0);
 
 
     }

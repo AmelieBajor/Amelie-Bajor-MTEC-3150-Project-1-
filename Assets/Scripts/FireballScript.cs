@@ -9,7 +9,7 @@ public class FireballScript : MonoBehaviour
     public float despawnTimer;
     public float maxDespawnTime = 1;
 
-    public int damageAmount = 1;
+    public int damageAmount = 3;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
