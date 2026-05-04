@@ -35,12 +35,12 @@ public class TeleportingPlatformsScript : MonoBehaviour
 
         }
 
-        if (disappearingTimer >= groupOneTime)
+        if (disappearingTimer >= groupOneTime && disappearingTimer < groupTwoTime / 1.1)
         {
             warning.SetActive(false);
         }
 
-        if (disappearingTimer >= groupTwoTime / 1.2)
+        if (disappearingTimer >= groupTwoTime / 1.1)
         {
 
             warning.SetActive(true);
